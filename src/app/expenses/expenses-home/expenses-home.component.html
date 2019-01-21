@@ -1,17 +1,22 @@
-
-<section>
-  <header>
-    <h5>Adding a new expense</h5>
-  </header>
-  <app-expense-form (newExpense)="addExpense($event)"></app-expense-form>
-</section>
-<section>
-  <header>
-    <h5>This is my list of expenses</h5>
-  </header>
-  <div>
-    <input class="" type="search" placeholder="Search in the list.." [formControl]="search" /> {{searchValue}}
-  </div>
-  <app-expense-list [list]="expenses | async | search : (search.valueChanges | async)" (deleteExpense)="deleteExpense($event)"></app-expense-list>
-
-</section>
+<sd-body-content pageLayout="cards">
+  <sd-body-content-header>
+    <sd-page-title title="Home of the expenses"></sd-page-title>
+  </sd-body-content-header>
+  <sd-body-content-inner>
+    <sd-card>
+      <sd-card-header [class]="'white'">
+        <h5>Adding a new expense</h5>
+      </sd-card-header>
+      <sd-card-body>
+        <app-expense-form (newExpense)="addExpense($event)"></app-expense-form>
+      </sd-card-body>
+    </sd-card>
+    <sd-card>
+      <sd-card-header [class]="'white d-flex justify-content-between align-items-center'">
+        <h5 class="mb-0">This is my list of expenses</h5>
+        <input style="width: 40%" class="form-control" type="search" placeholder="Search in the list.." [formControl]="search" /> {{searchValue}}
+      </sd-card-header>
+      <app-expense-list [list]="expenses | async | search : (search.valueChanges | async)" (deleteExpense)="deleteExpense($event)"></app-expense-list>
+    </sd-card>
+  </sd-body-content-inner>
+</sd-body-content>

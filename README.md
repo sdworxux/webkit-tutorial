@@ -31,47 +31,18 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Steps:
 
-### Update app.component.html 
-> header
-01. update header to `sd-header` with an applicationName
-02. update welcome message to a `sd-header-navbar-item`
-03. add extra`sd-header-navbar-item` with icon
-04. add extra `sd-header-navbar-item` with bootstrap dropdown
-05. add `sd-header-navbar-divider`
+### Update expenses 
 
-> body
-01. add the `sd-body` container
-02. put the `sd-body` tag in other components if you have a differnent layout for each page. (in the example home is different than the expenses)
+don't forget to import the sduimodule if needed in the `expenses.module`
 
-> sidebar
+> form
+01. use `col-form-label` on labels
+02. use `form-control` on inputs
+03. use `sb-btn` on buttons
 
-01. transform items to sd-sidebar-items (do not forget to add this inside of the `sd-body` tag
-02. extra elements `sd-sidebar-header-item`,`sd-sidebar-divider`
+> list
+01. upgrade to the bootstrap tables
 
->> sidebar properties explained
-
-| name | description |
-|------|-------------|
-|**sidebarFolded**|Sidebar will always be folded|
-|**sidebarFoldedMdDown**|Sidebar will be folded when the screen gets smaller than the Md width (see bootstrap widths) |
-|**sidebarFoldedLgDown**|Sidebar will be folded when the screen size gets smaller than the Lg width|
-|**overrideIsActive**|When you want to override the default routing behavior|
-
->> sidebar-item properties explained
-
-| name | description |
-|------|-------------|
-|**name**|name of the item|
-|**routerlink**|where to navigate to when clicked  |
-|**navCaret**|use when toggle is needed|
-|**navIcon**|name of the icon (ex. icons8-inbox)  |
-|**navBadgeValue**|the text you want on the badge  |
-|**navBadgeClass**|Override the badge design eg. no-bg, primary,... |
-|**isDisabled**| |
-|**appIsActive**||
-|**name**||
-
-> body-content
-
-01. add header
-02. add inner content
+> expenses home
+01. `sd-body-content` with header and inner  (use cards layout)
+02. use the webkit `sd-card` tags

@@ -9,10 +9,11 @@ import { ExpenseListComponent } from './expense-list/expense-list.component';
 import { ExpensesHomeComponent } from './expenses-home/expenses-home.component';
 import { ExpensesRoutingModule } from './expenses-routing.module';
 import { ExpensesService } from './expenses.service';
+import { SdUiModule } from '@sdworx/sd-components';
 
 @NgModule({
   imports: [
-    CommonModule, ReactiveFormsModule, CoolDirectivesModule, CoolPipesModule, HttpClientModule, ExpensesRoutingModule
+    CommonModule, ReactiveFormsModule, CoolDirectivesModule, CoolPipesModule, HttpClientModule, ExpensesRoutingModule, SdUiModule
   ],
   declarations: [ExpenseListComponent, ExpenseFormComponent, ExpensesHomeComponent],
   exports: [ExpensesHomeComponent],
