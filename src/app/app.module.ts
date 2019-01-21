@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoolPipesModule } from './cool-pipes/cool-pipes.module';
 import { HomeModule } from './home/home.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SdUiModule } from '@sdworx/sd-components';
 
 registerLocaleData(locale);
 
@@ -18,7 +20,8 @@ registerLocaleData(locale);
     BrowserModule,
     FormsModule, ReactiveFormsModule,
     CoolPipesModule,
-    AppRoutingModule, HomeModule
+    AppRoutingModule, HomeModule,
+    NgbModule, SdUiModule.forRoot()
   ],
   providers: [{
     provide : LOCALE_ID, useValue: 'fr-FR'
