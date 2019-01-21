@@ -1,0 +1,21 @@
+<header>
+  <div class="row border-bottom">
+    <h1 class="col-8">
+      Expenses example
+    </h1>
+    <div class="col-4">
+      <ul class="navbar nav">
+        <li> Hi {{ person }}! </li>
+      </ul>
+    </div>
+  </div>
+
+</header>
+<div class="p-3 d-flex justify-content-center">
+  <a href="#" class="pr-2" routerLink="">Home</a>
+  <a href="#" class="pr-2" routerLink="expenses">Expenses</a>
+</div>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

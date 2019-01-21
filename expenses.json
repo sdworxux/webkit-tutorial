@@ -1,0 +1,22 @@
+{
+  "expenses": [
+    {
+      "id": 1,
+      "amount": 15.15,
+      "description": "dummy from rest",
+      "date": "12/10/2018"
+    },
+    {
+      "amount": 15.15,
+      "description": "dummy",
+      "date": "2018-02-14",
+      "id": 2
+    },
+    {
+      "amount": 123,
+      "description": "test",
+      "date": "2018-02-14",
+      "id": 3
+    }
+  ]
+}
