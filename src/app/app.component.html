@@ -1,21 +1,40 @@
-<ngx-loading-bar></ngx-loading-bar><header>
-  <div class="row border-bottom">
-    <h1 class="col-8">
-      Expenses example
-    </h1>
-    <div class="col-4">
-      <ul class="navbar nav">
-        <li> Hi {{ person }}! </li>
-      </ul>
-    </div>
-  </div>
+<sd-container>
+  <sd-header applicationName="Expenses example">
+    <sd-header-navbar>
+      <sd-header-navbar-item>
+        <span class="px-2 d-none d-md-block">Hi {{ person }}!</span>
+      </sd-header-navbar-item>
+      <sd-header-navbar-divider></sd-header-navbar-divider>
+      <sd-header-navbar-item>
+        <a class="nav-link">
+          <i class="icons8-inbox pr-2"></i>
+          <span class="label warn up mr-0">3</span>
+        </a>
+      </sd-header-navbar-item>
+      <sd-header-navbar-divider></sd-header-navbar-divider>
+      <sd-header-navbar-item ngbDropdown placement="bottom-right">
+        <a class="nav-link text-ellipsis d-flex flex-row align-items-center" id="dropdownMenuProfile" ngbDropdownToggle>
+          <span class="avatar w-32 mr-2 d-none d-md-block">
+            <img alt="..." src="assets/images/a0.jpg">
+          </span>
+          <i class="icons8-expand-arrow" style="font-size: 0.875rem;"></i>
+        </a>
+        <div aria-labelledby="dropdownMenuProfile" ngbDropdownMenu class="dropdown-menu pos-abs" x-placement="bottom-right" style="position: absolute">
+          <button class="dropdown-item">Action - 1</button>
+          <button class="dropdown-item">Another Action</button>
+          <button class="dropdown-item">Something else is here</button>
+        </div>
+      </sd-header-navbar-item>
+    </sd-header-navbar>
+  </sd-header>
+  <sd-body>
+    <sd-sidebar [sidebarFoldedLgDown]="true">
+      <sd-sidebar-item routerLink="/home" name="Home" navIcon="icons8-home"></sd-sidebar-item>
+      <sd-sidebar-item routerLink="/expenses" name="Expenses" navIcon="icons8-money"></sd-sidebar-item>
+    </sd-sidebar>
+  
+        <router-outlet></router-outlet>
 
-</header>
-<div class="p-3 d-flex justify-content-center">
-  <a href="#" class="pr-2" routerLink="">Home</a>
-  <a href="#" class="pr-2" routerLink="expenses">Expenses</a>
-</div>
+  </sd-body>
 
-<div class="container">
-  <router-outlet></router-outlet>
-</div>
+</sd-container>

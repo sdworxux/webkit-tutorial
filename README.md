@@ -30,30 +30,48 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 ## Steps:
-Start `npm install -g @angular/cli`  to install angular if not done so already
 
-01. >Start `npm set registry http://proget/npm/SDWorxNpm/`<br>
+### Update app.component.html 
+> header
+01. update header to `sd-header` with an applicationName
+02. update welcome message to a `sd-header-navbar-item`
+03. add extra`sd-header-navbar-item` with icon
+04. add extra `sd-header-navbar-item` with bootstrap dropdown
+05. add `sd-header-navbar-divider`
 
-02. >Run  `npm install --save @ng-bootstrap/ng-bootstrap @sdworx/webkit @sdworx/sd-components` to install sdworx related libraries
-   Check your package.json to see the differences
+> body
+01. add the `sd-body` container
+02. put the `sd-body` tag in other components if you have a differnent layout for each page. (in the example home is different than the expenses)
 
-03. >Optional: run `npm install --save oidc-client ngx-toastr @ngx-loading-bar/core`
+> sidebar
 
-04. >Include CSS in your project by updateing angular.json
+01. transform items to sd-sidebar-items (do not forget to add this inside of the `sd-body` tag
+02. extra elements `sd-sidebar-header-item`,`sd-sidebar-divider`
 
-```"styles": [
-  "node_modules/@sdworx/webkit/dist/css/app.css", 
-  "node_modules/@sdworx/webkit/dist/css/icons.css", 
-  "styles.css"
-], 
-```
+>> sidebar properties explained
 
-05. >Add Modules to your root component
-```
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { SdUiModule } from '@sdworx/sd-components';
+| name | description |
+|------|-------------|
+|**sidebarFolded**|Sidebar will always be folded|
+|**sidebarFoldedMdDown**|Sidebar will be folded when the screen gets smaller than the Md width (see bootstrap widths) |
+|**sidebarFoldedLgDown**|Sidebar will be folded when the screen size gets smaller than the Lg width|
+|**overrideIsActive**|When you want to override the default routing behavior|
 
- imports: [
-    NgbModule, SdUiModule.forRoot()
-  ],
-```
+>> sidebar-item properties explained
+
+| name | description |
+|------|-------------|
+|**name**|name of the item|
+|**routerlink**|where to navigate to when clicked  |
+|**navCaret**|use when toggle is needed|
+|**navIcon**|name of the icon (ex. icons8-inbox)  |
+|**navBadgeValue**|the text you want on the badge  |
+|**navBadgeClass**|Override the badge design eg. no-bg, primary,... |
+|**isDisabled**| |
+|**appIsActive**||
+|**name**||
+
+> body-content
+
+01. add header
+02. add inner content
