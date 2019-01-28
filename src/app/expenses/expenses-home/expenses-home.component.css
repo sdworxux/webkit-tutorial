@@ -1,0 +1,7 @@
+.left-container {
+    transition: left 0.4s ease-in-out;
+    left:0;
+}
+.animate-table{
+    left: -34%;
+}

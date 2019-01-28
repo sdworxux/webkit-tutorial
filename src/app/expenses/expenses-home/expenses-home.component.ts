@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ExpensesService } from '../expenses.service';
 import { IExpense } from '../IExpense';
+import { EventEmitter } from 'protractor';
 
 @Component({
   selector: 'app-expenses-home',
@@ -15,7 +16,10 @@ export class ExpensesHomeComponent {
   title = 'app';
   person = 'everybody';
   searchValue: string;
+  active = false;
+
   get expenses() {
+    console.log('getting expenses');
     return this.service.getExpenses();
   }
 
@@ -26,6 +30,11 @@ export class ExpensesHomeComponent {
   }
 
   deleteExpense(expense: IExpense) {
-    this.service.deleteExpense(expense);
+    console.log('delete:'+expense.id);
+    this.service.deleteExpense(expense.id).subscribe();
+  }
+
+  toggleAddExpense() {
+    this.active = !this.active;
   }
 }

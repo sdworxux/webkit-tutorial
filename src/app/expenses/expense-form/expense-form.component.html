@@ -1,18 +1,28 @@
-<form [formGroup]="expenseForm" (ngSubmit)="addExpense()">
-  <div class="form-group row">
-    <label class="col-4 col-form-label" for="">Description</label>
-    <input id="description" focus class="col-8 form-control" required type="text" placeholder="description" formControlName="description">
-    <div class="text-danger invalid-feedback">
-      Please provide a valid description.
+<div class="modal col-4"  [class.animate]="active">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <header class="d-flex justify-content-between">
+        <h5>Adding a new expense</h5>
+        <i class="icons8-multiply" (click)="close()"></i>
+      </header>
+      <form [formGroup]="expenseForm" (ngSubmit)="addExpense()">
+        <div class="form-group">
+          <label class="form-control-label" for="">Description</label>
+          <input id="description" focus class="form-control" required type="text" placeholder="description" formControlName="description">
+          <div class="text-danger invalid-feedback">
+            Please provide a valid description.
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-control-label" for="">Amount</label>
+          <input id="amount" class="form-control" type="number" formControlName="amount">
+        </div>
+        <div class="form-group">
+          <label class="form-control-label" for="">Date</label>
+          <input id="date" class="form-control" type="date" formControlName="date">
+        </div>
+        <button class="btn sd-btn primary" type="submit" [disabled]="expenseForm.invalid">add expense</button>
+      </form>
     </div>
   </div>
-  <div class="form-group row">
-    <label class="col-4 col-form-label" for="">Amount</label>
-    <input id="amount" class="col-8 form-control" type="number" formControlName="amount">
-  </div>
-  <div class="form-group row">
-    <label class="col-4 col-form-label" for="">Date</label>
-    <input id="date" class="col-8 form-control" type="date" formControlName="date">
-  </div>
-  <button class="btn sd-btn primary" type="submit" [disabled]="expenseForm.invalid">add expense</button>
-</form>
+</div>

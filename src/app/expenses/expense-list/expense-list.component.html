@@ -1,20 +1,13 @@
-<table class="table table-hover mb-0">
-  <thead>
-    <tr>
-      <th>description</th>
-      <th>date</th>
-      <th>amount</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr zoom="1.05" *ngFor="let expense of list" [hidden]="expense.hidden" [class.expensive]="expense.amount > 500">
-      <td>{{ expense.description }}</td>
-      <td>{{ expense.date | date }}</td>
-      <td>{{ expense.amount | currency : 'EUR' }}</td>
-      <td>
-        <a href="#" (click)="deleteExp(expense)">delete</a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div @listAnimation class="mt">
+  <div @animation *ngFor="let expense of list" class="card box-shadow-z0 justify-content-center align-items-center flex-row p"
+    [class.expensive]="expense.amount > 500">
+    <div class="col-5 lead">{{ expense.description }}</div>
+    <div class="col-3">{{ expense.date | date }}</div>
+    <div class="col-3">{{ expense.amount | currency : 'EUR' }}</div>
+    <div class="p-0 col-1" style="vertical-align: middle">
+      <button class="btn btn-with-icon sd-btn">
+        <i class="icons8-trash" (click)="deleteExp(expense)" tooltip="Delete current expense"></i>
+      </button>
+    </div>
+  </div>
+</div>

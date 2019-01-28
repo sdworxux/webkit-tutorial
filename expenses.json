@@ -13,10 +13,46 @@
       "id": 2
     },
     {
+      "amount": 1234,
+      "description": "test",
+      "date": "2018-02-14",
+      "id": 6
+    },
+    {
+      "amount": 554,
+      "description": "testing",
+      "date": "2018-02-14",
+      "id": 12
+    },
+    {
+      "amount": 754,
+      "description": "adding one item",
+      "date": "2018-02-14",
+      "id": 13
+    },
+    {
       "amount": 123,
       "description": "test",
       "date": "2018-02-14",
-      "id": 3
+      "id": 14
+    },
+    {
+      "amount": 324,
+      "description": "test",
+      "date": "2018-02-14",
+      "id": 15
+    },
+    {
+      "amount": 123,
+      "description": "test123",
+      "date": "2018-02-14",
+      "id": 16
+    },
+    {
+      "amount": 222,
+      "description": "gjh",
+      "date": "2018-02-14",
+      "id": 18
     }
   ]
 }
