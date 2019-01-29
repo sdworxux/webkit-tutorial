@@ -14,5 +14,8 @@
     <label class="col-4 col-form-label" for="">Date</label>
     <input id="date" class="col-8 form-control" type="date" formControlName="date">
   </div>
-  <button class="btn sd-btn primary" type="submit" [disabled]="expenseForm.invalid">add expense</button>
+  <div class="form-group row">
+    <label class="col-4 col-form-label" for=""></label>
+    <button class="btn sd-btn primary" type="submit" [disabled]="expenseForm.invalid">add expense</button>
+  </div>
 </form>
